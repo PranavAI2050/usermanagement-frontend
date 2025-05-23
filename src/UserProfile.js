@@ -12,7 +12,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/users/${userId}`);
+        const response = await fetch(`https://usermanagement-backend-kx60.onrender.com/api/users/${userId}`);
         if (!response.ok) throw new Error(`Failed to fetch user. Status: ${response.status}`);
         const data = await response.json();
         setUser(data);
