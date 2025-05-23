@@ -14,7 +14,7 @@ const AdminPanel = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users');
+      const res = await fetch('https://usermanagement-backend-kx60.onrender.com/api/users');
       if (!res.ok) throw new Error('Failed to fetch users');
       const data = await res.json();
       setUsers(data);
@@ -41,7 +41,7 @@ const AdminPanel = () => {
 
   const handleAdd = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users', {
+      const res = await fetch('https://usermanagement-backend-kx60.onrender.com/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -67,7 +67,7 @@ const AdminPanel = () => {
 
   const handleUpdate = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${editingUserId}`, {
+      const res = await fetch(`https://usermanagement-backend-kx60.onrender.com/api/users/${editingUserId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -89,7 +89,7 @@ const AdminPanel = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://usermanagement-backend-kx60.onrender.com/api/users/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed to delete user');
       await fetchUsers();
     } catch (err) {
